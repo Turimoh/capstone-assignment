@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hello TailwindCSS</title>
+  <!-- TailwindCSS via CDN — no install needed -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen bg-gradient-to-br from-indigo-50 to-purple-100
+             flex items-center justify-center">
+
+  <!-- Card container -->
+  <div class="bg-white rounded-2xl shadow-xl p-10 max-w-md w-full text-center">
+
+    <!-- Badge -->
+    <span class="inline-block bg-indigo-100 text-indigo-700 text-xs
+                 font-semibold px-3 py-1 rounded-full mb-4 uppercase">
+      Capstone Project
+    </span>
+
+    <!-- Heading -->
+    <h1 class="text-4xl font-extrabold text-gray-800 mb-3">
+      Hello, TailwindCSS! 👋
+    </h1>
+
+    <!-- Description -->
+    <p class="text-gray-500 text-base leading-relaxed mb-6">
+      Styled using only utility classes — no custom CSS written.
+    </p>
+
+    <!-- Feature pills -->
+    <div class="flex flex-wrap justify-center gap-2 mb-6">
+      <span class="bg-purple-100 text-purple-700 text-xs font-medium px-3 py-1 rounded-full">Utility-First</span>
+      <span class="bg-indigo-100 text-indigo-700 text-xs font-medium px-3 py-1 rounded-full">No Custom CSS</span>
+      <span class="bg-pink-100 text-pink-700 text-xs font-medium px-3 py-1 rounded-full">CDN Setup</span>
+    </div>
+
+    <!-- Interactive button: swaps colour class on click -->
+    <button
+      onclick="this.textContent='🎉 It works!';
+               this.classList.replace('bg-indigo-600','bg-green-500');
+               this.classList.replace('hover:bg-indigo-700','hover:bg-green-600');"
+      class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold
+             py-3 px-8 rounded-xl transition-colors duration-200 cursor-pointer">
+      Click Me
+    </button>
+
+    <!-- Footer note -->
+    <p class="text-gray-400 text-xs mt-6">Moringa School · GenAI Capstone · Week 1</p>
+
+  </div>
+</body>
+</html>

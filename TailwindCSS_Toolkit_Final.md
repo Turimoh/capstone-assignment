@@ -29,13 +29,13 @@ Vercel (the platform that hosts millions of web apps) uses TailwindCSS for its e
 
 ## 3. System Requirements
 
-| Requirement | Details |
-|-------------|---------|
-| OS | Windows, macOS, or Linux |
-| Browser | Any modern browser (Chrome, Firefox, Edge) |
-| Code Editor | VS Code (recommended) |
-| Node.js | Optional — only needed for the CLI/build approach |
-| Internet | Required for CDN approach |
+| Requirement | Details                                           |
+| ----------- | ------------------------------------------------- |
+| OS          | Windows, macOS, or Linux                          |
+| Browser     | Any modern browser (Chrome, Firefox, Edge)        |
+| Code Editor | VS Code (recommended)                             |
+| Node.js     | Optional — only needed for the CLI/build approach |
+| Internet    | Required for CDN approach                         |
 
 > ✅ **For this Hello World, no installation is required** — we use the TailwindCSS CDN.
 
@@ -80,7 +80,7 @@ npx tailwindcss -i ./input.css -o ./output.css --watch
 Then link `output.css` in your HTML:
 
 ```html
-<link href="./output.css" rel="stylesheet">
+<link href="./output.css" rel="stylesheet" />
 ```
 
 ---
@@ -90,50 +90,54 @@ Then link `output.css` in your HTML:
 **What it does:**
 Renders a styled card on a gradient background. The card contains a heading, a description, feature pills, and a button. When the button is clicked, it changes color and text to confirm interactivity.
 
-**File:** `tailwind-hello-world/index.html`
+**File:** `/index.html`
 
 ```html
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>Hello TailwindCSS</title>
-  <!-- TailwindCSS via CDN — no install needed -->
-  <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="min-h-screen bg-gradient-to-br from-indigo-50 to-purple-100
-             flex items-center justify-center">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hello TailwindCSS</title>
+    <!-- TailwindCSS via CDN — no install needed -->
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body
+    class="min-h-screen bg-gradient-to-br from-indigo-50 to-purple-100
+             flex items-center justify-center"
+  >
+    <!-- Card container -->
+    <div
+      class="bg-white rounded-2xl shadow-xl p-10 max-w-md w-full text-center"
+    >
+      <!-- Badge -->
+      <span
+        class="inline-block bg-indigo-100 text-indigo-700 text-xs
+                 font-semibold px-3 py-1 rounded-full mb-4 uppercase"
+      >
+        Capstone Project
+      </span>
 
-  <!-- Card container -->
-  <div class="bg-white rounded-2xl shadow-xl p-10 max-w-md w-full text-center">
+      <!-- Heading -->
+      <h1 class="text-4xl font-extrabold text-gray-800 mb-3">
+        Hello, TailwindCSS! 👋
+      </h1>
 
-    <!-- Badge -->
-    <span class="inline-block bg-indigo-100 text-indigo-700 text-xs
-                 font-semibold px-3 py-1 rounded-full mb-4 uppercase">
-      Capstone Project
-    </span>
+      <!-- Description -->
+      <p class="text-gray-500 text-base leading-relaxed mb-6">
+        Styled using only utility classes — no custom CSS written.
+      </p>
 
-    <!-- Heading -->
-    <h1 class="text-4xl font-extrabold text-gray-800 mb-3">
-      Hello, TailwindCSS! 👋
-    </h1>
-
-    <!-- Description -->
-    <p class="text-gray-500 text-base leading-relaxed mb-6">
-      Styled using only utility classes — no custom CSS written.
-    </p>
-
-    <!-- Interactive button: swaps color class on click -->
-    <button
-      onclick="this.textContent='🎉 It works!';
+      <!-- Interactive button: swaps color class on click -->
+      <button
+        onclick="this.textContent='🎉 It works!';
                this.classList.replace('bg-indigo-600','bg-green-500')"
-      class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold
-             py-3 px-8 rounded-xl transition-colors duration-200">
-      Click Me
-    </button>
-
-  </div>
-</body>
+        class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold
+             py-3 px-8 rounded-xl transition-colors duration-200"
+      >
+        Click Me
+      </button>
+    </div>
+  </body>
 </html>
 ```
 
@@ -142,16 +146,16 @@ A centered white card on a purple-indigo gradient page. Clicking the button chan
 
 **Key Tailwind classes explained:**
 
-| Class | What it does |
-|-------|-------------|
-| `bg-gradient-to-br` | Background gradient going bottom-right |
-| `from-indigo-50 to-purple-100` | Gradient colour stops |
-| `flex items-center justify-center` | Centers content on both axes |
-| `rounded-2xl` | Large rounded corners |
-| `shadow-xl` | Large box shadow |
-| `text-4xl font-extrabold` | Large, heavy heading text |
-| `hover:bg-indigo-700` | Darker background on mouse hover |
-| `transition-colors duration-200` | Smooth colour animation |
+| Class                              | What it does                           |
+| ---------------------------------- | -------------------------------------- |
+| `bg-gradient-to-br`                | Background gradient going bottom-right |
+| `from-indigo-50 to-purple-100`     | Gradient colour stops                  |
+| `flex items-center justify-center` | Centers content on both axes           |
+| `rounded-2xl`                      | Large rounded corners                  |
+| `shadow-xl`                        | Large box shadow                       |
+| `text-4xl font-extrabold`          | Large, heavy heading text              |
+| `hover:bg-indigo-700`              | Darker background on mouse hover       |
+| `transition-colors duration-200`   | Smooth colour animation                |
 
 ---
 
@@ -160,6 +164,7 @@ A centered white card on a purple-indigo gradient page. Clicking the button chan
 ### Prompt 1
 
 **Prompt used:**
+
 > "Give me a step-by-step guide to use TailwindCSS in a plain HTML file for beginners. No build tools."
 
 **Link:** [ai.moringaschool.com](http://ai.moringaschool.com)
@@ -174,6 +179,7 @@ The AI explained the CDN approach clearly — just add a script tag and start us
 ### Prompt 2
 
 **Prompt used:**
+
 > "What are the most important TailwindCSS utility classes a beginner should know? Group them by category."
 
 **Link:** [ai.moringaschool.com](http://ai.moringaschool.com)
@@ -188,6 +194,7 @@ The AI grouped classes into Layout (`flex`, `grid`), Spacing (`p-`, `m-`), Typog
 ### Prompt 3
 
 **Prompt used:**
+
 > "Write a Hello World card component using TailwindCSS with a button that changes colour when clicked. Use only HTML and the CDN."
 
 **Link:** [ai.moringaschool.com](http://ai.moringaschool.com)
@@ -202,6 +209,7 @@ The AI produced a working HTML file with a styled card and an `onclick` handler 
 ### Prompt 4
 
 **Prompt used:**
+
 > "I'm getting an error where my Tailwind hover classes don't work. What could be wrong?"
 
 **Link:** [ai.moringaschool.com](http://ai.moringaschool.com)
@@ -222,6 +230,7 @@ The AI explained that when using the CDN, hover variants work automatically. For
 **Cause:** Forgot to include the CDN script tag.
 
 **Fix:**
+
 ```html
 <!-- Add this inside <head> -->
 <script src="https://cdn.tailwindcss.com"></script>
@@ -242,7 +251,7 @@ module.exports = {
   content: ["./src/**/*.{html,js}"], // ← make sure this matches your file paths
   theme: { extend: {} },
   plugins: [],
-}
+};
 ```
 
 **Reference:** [StackOverflow – Tailwind hover not working](https://stackoverflow.com)
@@ -268,7 +277,7 @@ module.exports = {
 **Fix:** Use `classList.replace('old-class', 'new-class')` where both classes already exist in your HTML — or safelist them in config:
 
 ```javascript
-safelist: ['bg-green-500', 'bg-red-500']
+safelist: ["bg-green-500", "bg-red-500"];
 ```
 
 ---
@@ -281,15 +290,15 @@ Tested with a classmate who followed the guide from scratch on a Windows machine
 
 ## 8. References
 
-| Resource | Link |
-|----------|------|
-| Official TailwindCSS Docs | https://tailwindcss.com/docs |
-| Tailwind CDN Setup | https://tailwindcss.com/docs/installation/play-cdn |
-| Tailwind Cheat Sheet | https://nerdcave.com/tailwind-cheat-sheet |
-| Tailwind YouTube Crash Course (Traversy Media) | https://www.youtube.com/watch?v=dFgzHOX84xQ |
-| Tailwind Components Library | https://tailwindui.com/components |
-| Node.js Download | https://nodejs.org |
+| Resource                                       | Link                                               |
+| ---------------------------------------------- | -------------------------------------------------- |
+| Official TailwindCSS Docs                      | https://tailwindcss.com/docs                       |
+| Tailwind CDN Setup                             | https://tailwindcss.com/docs/installation/play-cdn |
+| Tailwind Cheat Sheet                           | https://nerdcave.com/tailwind-cheat-sheet          |
+| Tailwind YouTube Crash Course (Traversy Media) | https://www.youtube.com/watch?v=dFgzHOX84xQ        |
+| Tailwind Components Library                    | https://tailwindui.com/components                  |
+| Node.js Download                               | https://nodejs.org                                 |
 
 ---
 
-*Document prepared as part of Moringa School GenAI Capstone — Week 1.*
+_Document prepared as part of Moringa School GenAI Capstone — Week 1._
